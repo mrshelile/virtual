@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_methods",
+  "info": {
+    "singularName": "payment-method",
+    "pluralName": "payment-methods",
+    "displayName": "payment-method",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "universal": {
+      "type": "uid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "merchant_code": {
+      "type": "biginteger"
+    },
+    "store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::store.store",
+      "inversedBy": "payment_methods"
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart.cart",
+      "mappedBy": "payment_method"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

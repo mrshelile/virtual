@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deliveries",
+  "info": {
+    "singularName": "delivery",
+    "pluralName": "deliveries",
+    "displayName": "delivery",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company_name": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email",
+      "unique": true
+    },
+    "address": {
+      "type": "text"
+    },
+    "contacts": {
+      "type": "integer"
+    },
+    "Owner": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "carts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart.cart",
+      "mappedBy": "delivery"
+    }
+  }
+}
